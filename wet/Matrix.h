@@ -8,6 +8,8 @@ private:
     int rows;
     int cols;
     int *data;
+    static double CalcDeterminant(const Matrix& matrix, const int beginIndex);
+
 
 public:
     Matrix();
@@ -49,6 +51,8 @@ public:
     Matrix transpose() const;
 
     static double CalcFrobeniusNorm(const Matrix& matrix);
+
+    static double CalcDeterminant(const Matrix& matrix);
 
     friend std::ostream& operator<<(std::ostream& os, const Matrix& matrix);
     friend bool operator==(const Matrix& matrix1, const Matrix& matrix2);

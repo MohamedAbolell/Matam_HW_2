@@ -191,5 +191,41 @@ double Matrix:: CalcFrobeniusNorm(const Matrix& matrix){
     }
     return sqrt(sumOfSum);
 }
-
+double Matrix:: CalcDeterminant(const Matrix& matrix, const int beginIndex){
+    if(beginIndex == matrix.rows){
+        return 0;
+    }
+    if(matrix.rows ==2){
+        return matrix(0,0)*matrix(1,1) - (matrix(0,1)*matrix(1,0));
+    }
+    int mRows=0 , mCols=0;
+    Matrix minor(matrix.rows-1, matrix.cols-1);
+    for(int i=1;i<matrix.rows;i++){
+        for(int j=0;j<matrix.cols;j++){
+            if(j!=beginIndex){
+                minor(mRows,mCols)=matrix(i,j);
+                if(mCols+1 == matrix.cols-1){
+                    mCols =0;
+                    mRows++;
+                }
+                else{
+                    mCols++;
+                }
+            }
+        }
+    }
+    return (beginIndex%2==0? 1:-1) * matrix(0,beginIndex)*CalcDeterminant(minor, 0) + CalcDeterminant(matrix, beginIndex+1);
+}
+double Matrix:: CalcDeterminant(const Matrix& matrix){
+    if(matrix.rows != matrix.cols){
+        exitWithError(MatamErrorType::NotSquareMatrix);
+    }
+    if(matrix.rows == 0){
+        return 0;
+    }
+    if(matrix.rows == 1){
+        return matrix(0,0);
+    }
+    return CalcDeterminant(matrix, 0);
+}
 

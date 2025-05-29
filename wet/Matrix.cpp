@@ -84,6 +84,32 @@ Matrix& Matrix:: operator *= (const Matrix& matrix2) {
   *this = *this * matrix2;
   return *this;
 }
+Matrix Matrix:: operator-() const {
+    Matrix temp = *this;
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            temp(i,j)= (*this)(i,j) * (-1);
+        }
+    }
+    return temp;
+}
+Matrix Matrix:: operator*(const int num) const{
+    Matrix temp = *this;
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            temp(i,j)= (*this)(i,j)*num;
+        }
+    }
+    return temp;
+}
+Matrix  operator*(const int num, const Matrix& matrix) {
+    return  matrix * num;
+}
+Matrix& Matrix:: operator*=(const int num){
+    *this = *this * num;;
+    return *this;
+}
+
 
 
 const int& Matrix::operator()(const int row , const int col) const{
@@ -99,6 +125,7 @@ int& Matrix::operator()(const int row , const int col){
     }
     return data[row * cols + col];
 }
+
 std::ostream& operator<<(std::ostream& os, const Matrix& matrix){
     if(matrix.rows == 0 || matrix.cols == 0) {
         return os;

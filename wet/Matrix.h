@@ -25,15 +25,25 @@ public:
     const int& operator()(const int row , const int col) const;
 
     Matrix operator+(const Matrix& matrix2) const;
+
     Matrix operator-(const Matrix& matrix2) const;
+
     Matrix operator*(const Matrix& matrix2) const;
+
     Matrix& operator+=(const Matrix& matrix2);
+
     Matrix& operator -= (const Matrix& matrix2);
+
     Matrix&  operator *= (const Matrix& matrix2);
+
+    Matrix operator-() const;
+
+    Matrix operator*(const int num) const;
+
+    Matrix& operator*=(const int num);
 
 
     friend std::ostream& operator<<(std::ostream& os, const Matrix& matrix);
-
 
 };
 

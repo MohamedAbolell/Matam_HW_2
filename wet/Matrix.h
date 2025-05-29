@@ -6,8 +6,10 @@ class Matrix {
 private:
     int rows;
     int cols;
-    int* data;
+    int *data;
 
 public:
     Matrix();
-    Matrix(int rows , int cols ,int value=0);
+
+    Matrix(int rows, int cols, int value = 0);
+};

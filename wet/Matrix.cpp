@@ -110,7 +110,22 @@ Matrix& Matrix:: operator*=(const int num){
     return *this;
 }
 
+bool operator==(const Matrix& matrix1, const Matrix& matrix2){
+    if(!(matrix1.rows == matrix2.rows && matrix1.cols == matrix2.cols )){
+        return false;
+    }
+    for (int i = 0; i < matrix1.rows; i++) {
+        for (int j = 0; j < matrix1.cols; j++) {
+            if(matrix1(i,j) != matrix2(i,j))
+                return false;
+        }
+    }
+    return true;
 
+}
+bool operator!=(const Matrix& matrix1, const Matrix& matrix2){
+    return !(matrix1==matrix2);
+}
 
 const int& Matrix::operator()(const int row , const int col) const{
     if (row < 0 || col < 0 || row >= rows || col >= cols || data == nullptr) {

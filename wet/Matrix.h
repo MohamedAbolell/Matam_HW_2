@@ -44,7 +44,12 @@ public:
 
 
     friend std::ostream& operator<<(std::ostream& os, const Matrix& matrix);
+    friend bool operator==(const Matrix& matrix1, const Matrix& matrix2);
+
 
 };
 
 std::ostream& operator<<(std::ostream& os, const Matrix& matrix);
+bool operator==(const Matrix& matrix1, const Matrix& matrix2);
+bool operator!=(const Matrix& matrix1, const Matrix& matrix2);
+

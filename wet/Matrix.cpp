@@ -34,6 +34,58 @@ Matrix& Matrix::operator=(const Matrix& matrix){
     }
     return *this;
 }
+
+ Matrix Matrix:: operator+(const Matrix& matrix2) const {
+	if (this->rows != matrix2.rows || this->cols != matrix2.cols) {
+		exitWithError (MatamErrorType::UnmatchedSizes);
+	}
+  Matrix result(this->rows, this->cols);
+	for (int i = 0; i < this->rows; i++){
+	  for (int j = 0; j < this->cols; j++){
+ 			result(i,j) = (*this)(i,j) + matrix2(i,j);
+		}
+	}
+ 	return result;
+}
+
+ Matrix Matrix:: operator-(const Matrix& matrix2) const{
+    if (this->rows != matrix2.rows || this->cols != matrix2.cols) {
+      exitWithError (MatamErrorType::UnmatchedSizes);
+    }
+    Matrix result(this->rows, this->cols);
+    for (int i = 0; i < this->rows*this->cols; i++) {
+      result.data[i] = this->data[i] - matrix2.data[i];
+    }
+    return result;
+ }
+ Matrix Matrix:: operator*(const Matrix& matrix2) const{
+	if (this->cols != matrix2.rows) {
+  		exitWithError ( MatamErrorType:: UnmatchedSizes);
+ 	}
+ 	Matrix result(this->rows, matrix2.cols);
+ 	for (int i = 0; i < this->rows; i++) {
+        for (int j = 0; j < matrix2.cols; j++) {
+           	 for (int k = 0; k < matrix2.rows ; k++){
+                result(i,j) += (*this)(i,k) * matrix2(k,j);
+       		 }
+      	 }
+    }
+   return result;
+ }
+Matrix& Matrix:: operator += (const Matrix& matrix2) {
+  *this = *this + matrix2;
+  return *this;
+}
+Matrix& Matrix:: operator -= (const Matrix& matrix2) {
+  *this = *this - matrix2;
+  return *this;
+}
+Matrix& Matrix:: operator *= (const Matrix& matrix2) {
+  *this = *this * matrix2;
+  return *this;
+}
+
+
 const int& Matrix::operator()(const int row , const int col) const{
     if (row < 0 || col < 0 || row >= rows || col >= cols || data == nullptr) {
         exitWithError (MatamErrorType::OutOfBounds);

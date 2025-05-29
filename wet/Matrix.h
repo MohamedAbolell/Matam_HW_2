@@ -24,6 +24,14 @@ public:
 
     const int& operator()(const int row , const int col) const;
 
+    Matrix operator+(const Matrix& matrix2) const;
+    Matrix operator-(const Matrix& matrix2) const;
+    Matrix operator*(const Matrix& matrix2) const;
+    Matrix& operator+=(const Matrix& matrix2);
+    Matrix& operator -= (const Matrix& matrix2);
+    Matrix&  operator *= (const Matrix& matrix2);
+
+
     friend std::ostream& operator<<(std::ostream& os, const Matrix& matrix);
 
 

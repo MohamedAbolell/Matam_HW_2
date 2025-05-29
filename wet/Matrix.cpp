@@ -154,4 +154,22 @@ std::ostream& operator<<(std::ostream& os, const Matrix& matrix){
     return os;
 }
 
+Matrix Matrix:: rotateClockwise() const{
+    Matrix clock(cols, rows);
+    for (int i = 0; i < cols; i++){
+        for (int j = 0; j < rows; j++){
+            clock(i,j) = (*this)(rows-1-j,i);
+        }
+    }
+    return clock;
+}
+Matrix Matrix:: rotateCounterClockwise() const{
+    Matrix counterClock(cols, rows);
+    for (int i = 0; i < cols; i++){
+        for (int j = 0; j < rows; j++){
+            counterClock(i,j) = (*this)(j,cols-1-i);
+        }
+    }
+    return counterClock;
+}
 

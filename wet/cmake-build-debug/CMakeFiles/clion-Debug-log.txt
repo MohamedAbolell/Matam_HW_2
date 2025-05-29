@@ -1,4 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -DCMAKE_C_COMPILER=/opt/homebrew/opt/gcc@13/bin/gcc-14 -G Ninja -S "/Users/mohamedabolel/Documents/mohamed/spring 25/Matam/HW2/Matam_HW_2/wet" -B "/Users/mohamedabolel/Documents/mohamed/spring 25/Matam/HW2/Matam_HW_2/wet/cmake-build-debug"
+/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles" -S /Users/onegvaknin/Desktop/Matam/Matam_HW_2/wet -B /Users/onegvaknin/Desktop/Matam/Matam_HW_2/wet/cmake-build-debug
 -- Configuring done (0.0s)
 -- Generating done (0.0s)
--- Build files have been written to: /Users/mohamedabolel/Documents/mohamed/spring 25/Matam/HW2/Matam_HW_2/wet/cmake-build-debug
+-- Build files have been written to: /Users/onegvaknin/Desktop/Matam/Matam_HW_2/wet/cmake-build-debug

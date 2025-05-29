@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include "Utilities.h"
 
 class Matrix {
 private:
@@ -18,5 +19,7 @@ public:
     Matrix& operator=(const Matrix& matrix);
 
     ~Matrix();
+    int& operator()(const int row , const int col);
+    const int& operator()(const int row , const int col) const;
 
 };

@@ -34,4 +34,18 @@ Matrix& Matrix::operator=(const Matrix& matrix){
     }
     return *this;
 }
+const int& Matrix::operator()(const int row , const int col) const{
+    if (row < 0 || col < 0 || row >= rows || col >= cols || data == nullptr) {
+        exitWithError (MatamErrorType::OutOfBounds);
+    }
+    return data[row * cols + col];
+}
+
+int& Matrix::operator()(const int row , const int col){
+    if (row < 0 || col < 0 || row >= rows || col >= cols || data == nullptr) {
+        exitWithError (MatamErrorType::OutOfBounds);
+    }
+    return data[row * cols + col];
+}
+
 

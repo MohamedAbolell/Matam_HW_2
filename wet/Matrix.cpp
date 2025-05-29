@@ -182,4 +182,14 @@ Matrix Matrix:: transpose() const{
     }
     return trans;
 }
+double Matrix:: CalcFrobeniusNorm(const Matrix& matrix){
+    double sumOfSum=0;
+    for (int i = 0; i < matrix.rows; i++){
+        for (int j = 0; j < matrix.cols; j++){
+            sumOfSum += pow(matrix(i,j),2) ;
+        }
+    }
+    return sqrt(sumOfSum);
+}
+
 

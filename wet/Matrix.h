@@ -46,6 +46,9 @@ public:
 
     Matrix rotateCounterClockwise() const;
 
+    Matrix transpose() const;
+
+
     friend std::ostream& operator<<(std::ostream& os, const Matrix& matrix);
     friend bool operator==(const Matrix& matrix1, const Matrix& matrix2);
 

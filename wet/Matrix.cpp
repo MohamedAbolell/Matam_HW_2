@@ -173,3 +173,13 @@ Matrix Matrix:: rotateCounterClockwise() const{
     return counterClock;
 }
 
+Matrix Matrix:: transpose() const{
+    Matrix trans(cols, rows);
+    for (int i = 0; i < cols; i++){
+        for (int j = 0; j < rows; j++){
+            trans(i,j) = (*this)(j,i);
+        }
+    }
+    return trans;
+}
+

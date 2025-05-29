@@ -42,14 +42,14 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk -mmacosx-version-min=14.5 -fcolor-diagnostics"
+					"fragment" : "-g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -fcolor-diagnostics"
 				}
 			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 2,
-					"path" : "/Users/onegvaknin/Desktop/Matam/Matam_HW_2/wet/."
+					"path" : "/Users/mohamedabolel/Documents/mohamed/spring 25/Matam/HW2/Matam_HW_2/wet/."
 				}
 			],
 			"language" : "CXX",

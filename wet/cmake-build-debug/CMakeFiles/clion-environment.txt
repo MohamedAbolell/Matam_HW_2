@@ -1,4 +1,3 @@
-ToolSet: 1.0 (local)Ninja: 1.12.0@/Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja
-Options: 
+ToolSet: 1.0 (local)Options: 
 
-Options:
+Options:-DCMAKE_C_COMPILER=/opt/homebrew/opt/gcc@13/bin/gcc-14

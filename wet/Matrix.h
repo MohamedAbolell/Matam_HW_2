@@ -19,7 +19,14 @@ public:
     Matrix& operator=(const Matrix& matrix);
 
     ~Matrix();
+
     int& operator()(const int row , const int col);
+
     const int& operator()(const int row , const int col) const;
 
+    friend std::ostream& operator<<(std::ostream& os, const Matrix& matrix);
+
+
 };
+
+std::ostream& operator<<(std::ostream& os, const Matrix& matrix);

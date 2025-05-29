@@ -1,0 +1,3 @@
+/Users/mohamedabolel/Documents/mohamed/spring 25/Matam/HW2/Matam_HW_2/dry/cmake-build-debug/CMakeFiles/dry.dir
+/Users/mohamedabolel/Documents/mohamed/spring 25/Matam/HW2/Matam_HW_2/dry/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/mohamedabolel/Documents/mohamed/spring 25/Matam/HW2/Matam_HW_2/dry/cmake-build-debug/CMakeFiles/rebuild_cache.dir

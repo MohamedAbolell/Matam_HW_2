@@ -11,6 +11,10 @@ private:
     int length;
 public:
     MataMvidia(const std::string& movieName="" , const std::string& creatorName="" , const Matrix* array=nullptr, int length=0);
+    MataMvidia(const MataMvidia& matamVidia);
+    ~MataMvidia();
+    MataMvidia& operator= (const MataMvidia& matamVidia);
+
 
 };
 

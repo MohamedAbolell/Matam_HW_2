@@ -81,5 +81,15 @@ MataMvidia& MataMvidia::operator+= (const MataMvidia& matamVidia){
     frames = newFrames;
     return *this;
 }
+MataMvidia& MataMvidia:: operator+= (const Matrix& matrix){
+    Matrix array[] = {matrix};
+    MataMvidia newMovie("","",array,1);
+    return *this += newMovie;
+}
+MataMvidia MataMvidia:: operator+(const MataMvidia& matamVidia2)const {
+    MataMvidia newMovie= *this;
+    return newMovie += matamVidia2;
+}
+
 
 

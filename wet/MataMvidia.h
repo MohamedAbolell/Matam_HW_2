@@ -24,6 +24,11 @@ public:
 
     MataMvidia& operator+= (const MataMvidia& matamVidia);
 
+    MataMvidia& operator+= (const Matrix& matrix);
+
+    MataMvidia operator+(const MataMvidia& matamVidia2) const;
+
+
 
 
 };

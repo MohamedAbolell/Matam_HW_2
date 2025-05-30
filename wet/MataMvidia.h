@@ -28,8 +28,8 @@ public:
 
     MataMvidia operator+(const MataMvidia& matamVidia2) const;
 
-
-
+    friend std:: ostream& operator<<(std::ostream& os, const MataMvidia& matamVidia);
 
 };
 
+std:: ostream& operator<<(std::ostream& os, const MataMvidia& matamVidia);

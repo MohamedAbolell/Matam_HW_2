@@ -90,6 +90,15 @@ MataMvidia MataMvidia:: operator+(const MataMvidia& matamVidia2)const {
     MataMvidia newMovie= *this;
     return newMovie += matamVidia2;
 }
-
+std:: ostream& operator<<(std::ostream& os, const MataMvidia& matamVidia){
+    os << "Movie Name: " << matamVidia.movieName << std::endl;
+    os << "Author: " << matamVidia.creatorName << std::endl << std::endl;
+    for (int i = 0; i < matamVidia.length; i++){
+        os <<"Frame " << i << ":" << std::endl;
+        os << matamVidia.frames[i] << std::endl ;
+    }
+    os << "-----End of Movie-----"<< std::endl;
+    return os;
+}
 
 

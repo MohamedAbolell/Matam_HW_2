@@ -53,3 +53,33 @@ MataMvidia& MataMvidia:: operator= (const MataMvidia& matamVidia){
     }
     return *this;
 }
+const Matrix& MataMvidia:: operator[] (int index) const{
+    if (index < 0 || index >= length || frames == nullptr){
+        exitWithError(MatamErrorType::OutOfBounds);
+    }
+    return frames[index];
+}
+Matrix& MataMvidia:: operator[] (int index){
+    if (index < 0 || index >= length || frames == nullptr){
+        exitWithError(MatamErrorType::OutOfBounds);
+    }
+    return frames[index];
+}
+MataMvidia& MataMvidia::operator+= (const MataMvidia& matamVidia){
+    int newLength = length + matamVidia.length;
+    Matrix* newFrames = new Matrix[newLength];
+    for(int i = 0; i < length; i++){ // copy left movie first
+        newFrames[i] = frames[i];
+    }
+    for(int j = 0; j < matamVidia.length; j++){// copy right movie
+        newFrames[length+j] = matamVidia.frames[j];
+    }
+    if(frames != nullptr){
+        delete[] frames;
+    }
+    length = newLength;
+    frames = newFrames;
+    return *this;
+}
+
+

@@ -1,3 +1,0 @@
-/Users/onegvaknin/Desktop/Matam/Matam_HW_2/dry/cmake-build-debug/CMakeFiles/dry.dir
-/Users/onegvaknin/Desktop/Matam/Matam_HW_2/dry/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/onegvaknin/Desktop/Matam/Matam_HW_2/dry/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,4 +1,5 @@
 #include "MataMvidia.h"
+#include "Utilities.h"
 using std::string;
 
 MataMvidia:: MataMvidia(const string& movieName , const string& creatorName , const Matrix* array, int length):

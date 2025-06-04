@@ -1,7 +1,6 @@
 #pragma once
 
 #include <iostream>
-#include "Utilities.h"
 
 class Matrix {
 private:
@@ -36,6 +35,7 @@ public:
 
     Matrix& operator -= (const Matrix& matrix2);
 
+
     Matrix&  operator *= (const Matrix& matrix2);
 
     Matrix operator-() const;
@@ -59,7 +59,7 @@ public:
 
 
 };
-
+Matrix  operator*(const int num, const Matrix& matrix);
 std::ostream& operator<<(std::ostream& os, const Matrix& matrix);
 bool operator==(const Matrix& matrix1, const Matrix& matrix2);
 bool operator!=(const Matrix& matrix1, const Matrix& matrix2);

@@ -1,6 +1,13 @@
 #include "Matrix.h"
-
+#include "Utilities.h"
+#include <cmath>
 Matrix::Matrix() : rows(0), cols(0), data(nullptr) {};
+
+Matrix::Matrix(int rows, int cols,int value) : rows(rows), cols(cols), data(new int[rows*cols]) {
+    for (int i = 0; i < rows*cols; i++) {
+        data[i] = value;
+    }
+}
 
 Matrix::Matrix(const Matrix& matrix): rows(matrix.rows), cols(matrix.cols), data(nullptr) {
     if(matrix.data != nullptr) {
@@ -34,7 +41,6 @@ Matrix& Matrix::operator=(const Matrix& matrix){
     }
     return *this;
 }
-
  Matrix Matrix:: operator+(const Matrix& matrix2) const {
 	if (this->rows != matrix2.rows || this->cols != matrix2.cols) {
 		exitWithError (MatamErrorType::UnmatchedSizes);
@@ -47,7 +53,6 @@ Matrix& Matrix::operator=(const Matrix& matrix){
 	}
  	return result;
 }
-
  Matrix Matrix:: operator-(const Matrix& matrix2) const{
     if (this->rows != matrix2.rows || this->cols != matrix2.cols) {
       exitWithError (MatamErrorType::UnmatchedSizes);
